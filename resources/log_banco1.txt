@@ -1,4 +1,0 @@
-mysql> drop database gamesql;
-Query OK, 2 rows affected (0.02 sec)
-
-mysql> tee C:/Users/Gabe/eclipse-workspace/POO_CRUD-JavaWeb/resources/log_banco.txt;
