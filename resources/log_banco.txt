@@ -1,0 +1,53 @@
+mysql> source C:/Users/Gabe/eclipse-workspace/POO_CRUD-JavaWeb/resources/game.sql;
+Query OK, 1 row affected (0.00 sec)
+
+Database changed
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+Query OK, 0 rows affected, 2 warnings (0.02 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SELECT * FROM JOGADOR;
++-----------+-------------+------------+--------+------+------------+
+| idJogador | nomeJogador | dataNasc   | altura | peso | TimeCodigo |
++-----------+-------------+------------+--------+------+------------+
+|       201 | Cleiton     | 1979-03-21 |   1.95 | 87.0 |        101 |
++-----------+-------------+------------+--------+------+------------+
+1 row in set (0.00 sec)
+
+mysql> describe jogador;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| idJogador   | int          | NO   | PRI | NULL    |       |
+| nomeJogador | varchar(100) | YES  |     | NULL    |       |
+| dataNasc    | date         | YES  |     | NULL    |       |
+| altura      | decimal(4,2) | YES  |     | NULL    |       |
+| peso        | decimal(4,1) | YES  |     | NULL    |       |
+| TimeCodigo  | int          | YES  | MUL | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> describe SELECT * FROM Jogador;
++----+-------------+---------+------------+------+---------------+------+---------+------+------+----------+-------+
+| id | select_type | table   | partitions | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra |
++----+-------------+---------+------------+------+---------------+------+---------+------+------+----------+-------+
+|  1 | SIMPLE      | Jogador | NULL       | ALL  | NULL          | NULL | NULL    | NULL |    2 |   100.00 | NULL  |
++----+-------------+---------+------------+------+---------------+------+---------+------+------+----------+-------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> SELECT * FROM Jogador;
++-----------+--------------+------------+--------+-------+------------+
+| idJogador | nomeJogador  | dataNasc   | altura | peso  | TimeCodigo |
++-----------+--------------+------------+--------+-------+------------+
+|       201 | Cleiton      | 1979-03-21 |   1.85 |  87.0 |        101 |
+|       202 | Jeituscreudo | 1901-03-21 |   1.96 | 103.0 |        103 |
++-----------+--------------+------------+--------+-------+------------+
+2 rows in set (0.00 sec)
+
+mysql> exit
